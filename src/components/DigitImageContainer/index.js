@@ -4,10 +4,11 @@ import ButtonGroup from "@material-ui/core/ButtonGroup"
 
 import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
-
 import styles from "./DigitImageContainer.module.scss"
-
 import ThumbnailCard from "@components/ThumbnailCard"
+
+import { puppies } from "../../puppies_data.js"
+console.log(puppies)
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,9 +19,10 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(1),
     },
   },
-}))
+}));
 
-export default function BasicButtonGroup() {
+
+export default function DigitImageContainer() {
   const classes = useStyles()
 
   return (
@@ -30,18 +32,15 @@ export default function BasicButtonGroup() {
         color="primary"
         aria-label="text primary button group"
       >
-        {" "}
         {/* Thought of using tabs but decided not to modify original assignment */}
-        <Button>BUTTON ONE</Button>
-        <Button>BUTTON TWO</Button>
-        <Button>BUTTON THREE</Button>
+        {puppies.map(puppy => <Button>{puppy.name}</Button>)}
       </ButtonGroup>
 
       <section className={styles.main_image}>
         <img src="https://place-puppy.com/900x500" />
       </section>
 
-      <Grid container>
+      <Grid container spacing={4}>
         <Grid item md={4}>
           <ThumbnailCard />
         </Grid>
