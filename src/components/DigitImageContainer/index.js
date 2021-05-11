@@ -1,29 +1,51 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react"
+import Button from "@material-ui/core/Button"
+import ButtonGroup from "@material-ui/core/ButtonGroup"
 
-const useStyles = makeStyles((theme) => ({
+import { makeStyles } from "@material-ui/core/styles"
+import Grid from "@material-ui/core/Grid"
+
+import ThumbnailCard from "@components/ThumbnailCard"
+
+const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    '& > *': {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    "& > *": {
       margin: theme.spacing(1),
     },
   },
-}));
+}))
 
 export default function BasicButtonGroup() {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <div className={classes.root}>
-      <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
+      <ButtonGroup
+        variant="text"
+        color="primary"
+        aria-label="text primary button group"
+      >
+        {" "}
+        {/* Thought of using tabs but decided not to modify original assignment */}
+        <Button>BUTTON ONE</Button>
+        <Button>BUTTON TWO</Button>
+        <Button>BUTTON THREE</Button>
       </ButtonGroup>
+
+      <Grid container>
+        <Grid item md={4}>
+          <ThumbnailCard /> 
+        </Grid>
+        <Grid item md={4}>
+          <ThumbnailCard />
+        </Grid>
+        <Grid item md={4}>
+          <ThumbnailCard />
+        </Grid>
+      </Grid>
     </div>
-  );
+  )
 }
