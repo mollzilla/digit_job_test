@@ -7,12 +7,11 @@ import Seo from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
+    <h1>Hi Everyone</h1>
+    <p>Welcome to my Digit Exercise.</p>
     <Link to="/digit-challenge">Go to Digit Challenge</Link>
     <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+      <a href="https://github.com/mollzilla">My repos</a>
     </p>
   </Layout>
 )
