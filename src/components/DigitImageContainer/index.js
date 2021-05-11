@@ -19,8 +19,7 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(1),
     },
   },
-}));
-
+}))
 
 export default function DigitImageContainer() {
   const classes = useStyles()
@@ -33,7 +32,9 @@ export default function DigitImageContainer() {
         aria-label="text primary button group"
       >
         {/* Thought of using tabs but decided not to modify original assignment */}
-        {puppies.map(puppy => <Button>{puppy.name}</Button>)}
+        {puppies.map(puppy => (
+          <Button>{puppy.name}</Button>
+        ))}
       </ButtonGroup>
 
       <section className={styles.main_image}>
@@ -41,15 +42,18 @@ export default function DigitImageContainer() {
       </section>
 
       <Grid container spacing={4}>
-        <Grid item md={4}>
+        {puppies.map(puppy => (
+          <Grid item md={4}>
+            <ThumbnailCard {...puppy} />
+          </Grid>
+        ))}
+
+        {/* <Grid item md={4}>
           <ThumbnailCard />
         </Grid>
         <Grid item md={4}>
           <ThumbnailCard />
-        </Grid>
-        <Grid item md={4}>
-          <ThumbnailCard />
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   )

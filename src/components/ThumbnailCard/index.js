@@ -10,28 +10,31 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    cursor: "pointer"
   },
   media: {
-    height: 300,
+    height: 200,
+    width: 300
   },
 });
 
-export default function ThumbnailCard() {
+export default function ThumbnailCard({name, image, description}) {
   const classes = useStyles();
-
+console.log(image)
   return (
     <Card className={classes.root}>
+      {/* material ui cards and gatsby routing don't get along. Decided to go for the fast option and research for more elegant solutions later */}
         <CardMedia
           className={classes.media}
-          image="https://place-puppy.com/300x300"
-          title="Cute puppy No. 1"
+          image={image}
+          title={name}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Puppy No. 1.
+            {name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Risotto is a super active yet cuddly puppy suitable for children. Needs large garden.
+            {description}
           </Typography>
         </CardContent>
       <CardActions>
