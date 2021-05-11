@@ -5,6 +5,8 @@ import ButtonGroup from "@material-ui/core/ButtonGroup"
 import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 
+import styles from "./DigitImageContainer.module.scss"
+
 import ThumbnailCard from "@components/ThumbnailCard"
 
 const useStyles = makeStyles(theme => ({
@@ -35,9 +37,13 @@ export default function BasicButtonGroup() {
         <Button>BUTTON THREE</Button>
       </ButtonGroup>
 
+      <section className={styles.main_image}>
+        <img src="https://place-puppy.com/900x500" />
+      </section>
+
       <Grid container>
         <Grid item md={4}>
-          <ThumbnailCard /> 
+          <ThumbnailCard />
         </Grid>
         <Grid item md={4}>
           <ThumbnailCard />
